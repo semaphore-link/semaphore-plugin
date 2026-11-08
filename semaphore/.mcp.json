@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "semaphore": {
+      "type": "http",
+      "url": "https://mcp.semaphore.link/mcp",
+      "oauth": {
+        "clientId": "client_01M6EX374W7BCVNV9QQ7SPT2G0"
+      }
+    }
+  }
+}

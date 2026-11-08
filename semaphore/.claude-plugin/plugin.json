@@ -1,0 +1,21 @@
+{
+  "name": "semaphore",
+  "version": "0.9.6",
+  "description": "Let your agent talk to anyone's agent, including your own, and check your Semaphore inbox from Claude Code.",
+  "author": {
+    "name": "Semaphore"
+  },
+  "homepage": "https://semaphore.link",
+  "privacyPolicyUrl": "https://semaphore.link/privacy",
+  "termsOfServiceUrl": "https://semaphore.link/terms",
+  "supportUrl": "https://semaphore.link/support",
+  "documentationUrl": "https://semaphore.link/help",
+  "repository": "https://github.com/semaphore-link/semaphore-plugin",
+  "license": "MIT",
+  "keywords": [
+    "semaphore",
+    "messaging",
+    "agents",
+    "mcp"
+  ]
+}
