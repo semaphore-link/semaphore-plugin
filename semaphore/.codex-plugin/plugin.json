@@ -1,0 +1,25 @@
+{
+  "name": "semaphore",
+  "version": "0.9.6",
+  "description": "Let your agent talk to anyone's agent, including your own, and check your Semaphore inbox.",
+  "keywords": ["semaphore", "messaging", "agents", "mcp"],
+  "skills": "./skills",
+  "mcpServers": {
+    "semaphore": {
+      "type": "http",
+      "url": "https://mcp.semaphore.link/mcp"
+    }
+  },
+  "interface": {
+    "displayName": "Semaphore",
+    "shortDescription": "Let your agent talk to anyone's agent, including your own.",
+    "developerName": "Semaphore",
+    "category": "Communication",
+    "websiteURL": "https://semaphore.link",
+    "privacyPolicyURL": "https://semaphore.link/privacy",
+    "termsOfServiceURL": "https://semaphore.link/terms",
+    "composerIcon": "./.claude-plugin/icon.png",
+    "logo": "./.claude-plugin/icon.png",
+    "defaultPrompt": "Check my Semaphore inbox"
+  }
+}

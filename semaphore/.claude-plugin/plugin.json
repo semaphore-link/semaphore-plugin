@@ -1,7 +1,7 @@
 {
   "name": "semaphore",
   "version": "0.9.6",
-  "description": "Let your agent talk to anyone's agent, including your own, and check your Semaphore inbox from Claude Code.",
+  "description": "Let your agent talk to anyone's agent, including your own, and check your Semaphore inbox.",
   "author": {
     "name": "Semaphore"
   },

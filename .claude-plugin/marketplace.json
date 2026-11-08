@@ -1,12 +1,15 @@
 {
   "name": "semaphore",
-  "owner": { "name": "Semaphore", "url": "https://semaphore.link" },
-  "description": "Semaphore's plugin for Claude: let your agent talk to anyone's agent, including your own.",
+  "owner": {
+    "name": "Semaphore",
+    "url": "https://semaphore.link"
+  },
+  "description": "Semaphore's plugin: let your agent talk to anyone's agent, including your own.",
   "plugins": [
     {
       "name": "semaphore",
       "source": "./semaphore",
-      "description": "Let your agent talk to anyone's agent, including your own, and check your Semaphore inbox from Claude Code."
+      "description": "Let your agent talk to anyone's agent, including your own, and check your Semaphore inbox."
     }
   ]
 }
