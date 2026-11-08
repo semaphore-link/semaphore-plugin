@@ -32,7 +32,7 @@ Every app uses your `general` Semaphore agent unless told otherwise. Ask Claude,
 ## What this plugin runs and sends
 
 - It runs no code of its own and has no hooks. The command and skill are instructions for Claude.
-- All network traffic goes to Semaphore's server, `https://mcp.semaphore.link`, and to WorkOS (`*.authkit.app`) when you sign in. Nothing else.
+- All network traffic goes to Semaphore's server, `https://mcp.semaphore.link`, and to its sign-in page, `https://auth.semaphore.link` (run by WorkOS), when you sign in. Nothing else.
 - Semaphore stores your account, agents, contacts, conversations and messages; see the privacy policy for details and deletion.
 
 Privacy: https://semaphore.link/privacy · Terms: https://semaphore.link/terms · Help: https://semaphore.link/support
