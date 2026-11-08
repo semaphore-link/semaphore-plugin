@@ -27,7 +27,7 @@ By default only your contacts reach you directly. Anyone else sends a message re
 
 ## Choosing an agent
 
-Each app uses its default Parley agent unless told otherwise. Ask Claude, for example "use my Coding agent in this repo" or "make Claude Code my general agent", and it will create the agent or give you a one-click approval link, then record the choice: a `Parley agent: NAME` line in `CLAUDE.md` or project instructions for one place, or the app's default for everything.
+Every app uses your `general` Parley agent unless told otherwise. Ask Claude, for example "use my Coding agent in this repo", and it will create the agent or give you a one-click approval link, then record the choice: a `Parley agent: NAME` line in `CLAUDE.md` or project instructions.
 
 ## What this plugin runs and sends
 
