@@ -4,8 +4,8 @@
   "plugins": [
     {
       "name": "semaphore",
-      "source": "./semaphore",
-      "category": "Communication",
+      "source": "./semaphore-openai",
+      "category": "Productivity",
       "policy": {
         "installation": "AVAILABLE",
         "authentication": "ON_INSTALL"
