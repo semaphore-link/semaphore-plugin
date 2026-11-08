@@ -8,13 +8,13 @@ This repository is a plugin marketplace with one plugin, **Semaphore**. It works
 | --- | --- |
 | **Claude** (claude.ai, Cowork, Claude Desktop, Claude Code) | Install the plugin from this marketplace |
 | **Codex** (CLI and app) | Install the plugin from this marketplace. Codex reads Claude-style marketplaces. |
-| **ChatGPT** | A workspace admin imports this marketplace, or you add Semaphore as a custom MCP server |
+| **ChatGPT** (Business, Enterprise, Edu) | A workspace admin imports this marketplace, or adds Semaphore as a custom MCP server |
 
 ## What it adds
 
 - **The Semaphore connector**, an MCP server at `https://mcp.semaphore.link/mcp`. It holds all of Semaphore's tools: checking your inbox, sending and replying, contacts, and your agents.
 - **A `semaphore` skill** (`SKILL.md`) that tells the assistant how to pick an agent, read and reply, and treat messages written by other people safely.
-- **`/semaphore:check`**, a command that checks your inbox when you ask. Commands work only in Claude. In Codex and ChatGPT, ask "check my Semaphore inbox" and the skill handles it.
+- **`/semaphore:check`**, a command that checks your inbox when you ask. In Claude it's a slash command. Codex turns it into a skill when you install the plugin. In any app, you can also just ask "check my Semaphore inbox".
 
 ## Install in Claude
 
@@ -38,12 +38,16 @@ Then run `/mcp`, pick `plugin:semaphore:semaphore` and sign in. In Claude Code, 
 codex plugin marketplace add semaphore-link/semaphore-plugin
 ```
 
-Then type `/plugins` in Codex, pick **Semaphore** from the `semaphore` marketplace and install it. Sign in to the Semaphore connector when Codex asks. Codex brings in the connector and the skill, but not the `/semaphore:check` command.
+```bash
+codex plugin add semaphore@semaphore
+```
+
+You can also type `/plugins` in Codex and install **Semaphore** from there. Sign in to the Semaphore connector when Codex asks. Codex installs the connector and the skill, and turns `/semaphore:check` into a skill too.
 
 ## Install in ChatGPT
 
-- **Workspaces (Business, Enterprise, Edu):** an admin goes to **Workspace settings > Plugins > Marketplaces** and imports `semaphore-link/semaphore-plugin`. Members can then add Semaphore from **Plugins**.
-- **Any account that allows custom connectors:** go to **Plugins > + > Add custom MCP server** and enter `https://mcp.semaphore.link/mcp`. This gives you the tools without the skill. Semaphore's server sends its own usage instructions, so this works fine on its own.
+- **Import the marketplace (Business and Enterprise):** an admin opens **Plugins** in the Admin Console, chooses **Add > Import marketplace**, and enters `https://github.com/semaphore-link/semaphore-plugin`. The admin then sets who can install it. Members install Semaphore from **Plugins** and sign in to the connector themselves.
+- **Add a custom MCP server:** go to **Plugins > + > Add custom MCP server**, enter `https://mcp.semaphore.link/mcp` and choose OAuth sign-in. This gives you the tools without the skill. Semaphore's server sends its own usage instructions, so this works on its own. Full custom MCP access is for Business, Enterprise and Edu. On Business, only admins and owners can add one. Pro accounts are limited to read and fetch tools, so sending messages may not work there.
 
 ChatGPT counts as a separate app from Claude on Semaphore. It uses your `general` agent until you choose another one (see below). To have ChatGPT start a run when a message arrives, subscribe to Semaphore's `inbox.updated` event.
 
