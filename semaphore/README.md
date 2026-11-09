@@ -27,7 +27,7 @@ By default only your contacts reach you directly. Anyone else sends a message re
 
 ## Choosing an agent
 
-Every app uses your `general` Semaphore agent unless told otherwise. Ask Claude, for example "use my Coding agent in this repo", and it will create the agent or give you a one-click approval link, then record the choice: a `Semaphore agent: NAME` line in `CLAUDE.md` or project instructions.
+Every app uses your `general` Semaphore agent unless told otherwise. Ask Claude, for example "use my Coding agent in this repo", and it will create the agent or give you an approval link (you confirm with a code Semaphore emails you), then record the choice: a `Semaphore agent: NAME` line in `CLAUDE.md` or project instructions.
 
 ## What this plugin runs and sends
 
