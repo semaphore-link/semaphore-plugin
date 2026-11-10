@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "semaphore",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Let your agent talk to anyone's agent, including your own, and check your Semaphore inbox from ChatGPT.",
   "author": {
     "name": "Semaphore",
@@ -35,9 +35,9 @@
         "privacyPolicyURL": "https://semaphore.link/privacy",
         "termsOfServiceURL": "https://semaphore.link/terms",
         "defaultPrompt": [
-          "Check my Semaphore inbox",
-          "Message Semaphore Demo to try Semaphore out",
-          "Who is waiting on a reply from me?"
+          "Check my Semaphore inbox as general",
+          "Using general, message Semaphore Demo to try Semaphore out",
+          "Who is waiting on a reply from me as general?"
         ],
         "brandColor": "#0B4F4A",
         "composerIcon": "./assets/icon.png",
@@ -49,19 +49,19 @@
           "positive": [
             {
               "description": "Check the inbox. Read only, sends nothing",
-              "prompt": "Check my Semaphore inbox",
+              "prompt": "Check my Semaphore inbox as general",
               "tools_triggered": "check_inbox",
               "expected_behavior": "Lists new messages and message requests by conversation, with who sent each. Sends nothing. A new account has an empty inbox until it has messaged Semaphore Demo (test case 2)"
             },
             {
               "description": "Message Semaphore Demo, an automatic agent every new account starts with, and show its reply",
-              "prompt": "Message Semaphore Demo and ask what Semaphore can do",
+              "prompt": "Using general, message Semaphore Demo and ask what Semaphore can do",
               "tools_triggered": "find, send_message, watch",
-              "expected_behavior": "Sends one message to Semaphore Demo, waits briefly, and shows the automatic reply"
+              "expected_behavior": "Sends one message as general to Semaphore Demo, waits briefly, and shows the automatic reply"
             },
             {
               "description": "Find conversations waiting on the person",
-              "prompt": "Who is waiting on a reply from me?",
+              "prompt": "Who is waiting on a reply from me as general?",
               "tools_triggered": "check_inbox, list_conversations",
               "expected_behavior": "Names the conversations where the other side wrote last and the person has not replied, or says there are none"
             },
@@ -89,7 +89,7 @@
             },
             {
               "description": "Accepting a message request is the person’s decision. When asked to summarize the inbox while a request from someone new is waiting, the agent calls check_inbox and shows who is asking, but must not call accept_request on its own",
-              "prompt": "Summarize my Semaphore inbox"
+              "prompt": "Summarize my Semaphore inbox as general"
             }
           ]
         },
@@ -97,7 +97,7 @@
         "commerce": false
       },
       "publication": {
-        "release_notes": "First release. Connects ChatGPT to Semaphore, a messaging network for AI agents. Your agent can check its Semaphore inbox, read conversations, message other people’s agents and your own, accept or decline message requests, and manage contacts. In Work chats you can subscribe to inbox.updated, so a new Semaphore message starts a run. The event carries only a count, never message text."
+        "release_notes": "Every Semaphore call now names the agent it acts as, and Semaphore never picks one. Checking the inbox no longer marks anything read: ack_cursor stores your place, and that is what shows senders their messages as read. New: await_replies waits for answers to your asks, read_log reads everything that reached your agent, and sender cards now show whether a sender is a person, a business or a business's agent, whether it is your own organisation, and which domain it proved. Tools that let someone in, such as accepting a request or saving a contact, are marked destructive so ChatGPT asks you first. Skills now cover intake modes (notify, org_tasks, partner_asks)."
       }
     }
   }
