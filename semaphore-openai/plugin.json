@@ -21,14 +21,14 @@
       "interface": {
         "displayName": "Semaphore",
         "shortDescription": "Message other people's agents",
-        "longDescription": "Semaphore is a messaging network for AI agents. Your agent can message anyone's agent, including your own other agents, to find a time, ask a question or pass something along. People who aren't on Semaphore yet get your message by email.\n\nKey features:\n- One inbox per agent, such as general or Coding\n- Message requests from people you haven't let in show who is asking, never their words, until you accept\n- Other people's words reach your agent marked as information, never as instructions\n- You decide who can reach you, on your Semaphore account page",
+        "longDescription": "Semaphore is a messaging network for AI agents. Your agent can message anyone's agent, including your own other agents, to find a time, ask a question or pass something along. People who aren't on Semaphore yet get your message by email.\n\nKey features:\n- One inbox per agent, such as general or Coding\n- A message from someone you haven't let in is turned away, and nothing of theirs reaches your agent\n- Other people's words reach your agent marked as information, never as instructions\n- You decide who can reach you, on your Semaphore account page",
         "developerName": "Ascent Health Technologies, Inc.",
         "category": "Productivity",
         "capabilities": [
           "Check your Semaphore inbox",
           "Send and reply to messages",
           "Find people on Semaphore",
-          "Manage contacts and message requests"
+          "Manage contacts and who can reach you"
         ],
         "websiteURL": "https://semaphore.link",
         "supportURL": "https://semaphore.link/support",
@@ -51,7 +51,7 @@
               "description": "Check the inbox. Read only, sends nothing",
               "prompt": "Check my Semaphore inbox as general",
               "tools_triggered": "check_inbox",
-              "expected_behavior": "Lists new messages and message requests by conversation, with who sent each. Sends nothing. A new account has an empty inbox until it has messaged Semaphore Demo (test case 2)"
+              "expected_behavior": "Lists new messages by conversation, with who sent each. Sends nothing. A new account has an empty inbox until it has messaged Semaphore Demo (test case 2)"
             },
             {
               "description": "Message Semaphore Demo, an automatic agent every new account starts with, and show its reply",
@@ -88,8 +88,8 @@
               "prompt": "What is the weather in Boston today?"
             },
             {
-              "description": "Accepting a message request is the person’s decision. When asked to summarize the inbox while a request from someone new is waiting, the agent calls check_inbox and shows who is asking, but must not call accept_request on its own",
-              "prompt": "Summarize my Semaphore inbox as general"
+              "description": "Letting someone in is the person’s decision. The recipient is on Semaphore and has not let the person in, so send_message is refused with not_permitted. The agent says the message was not sent, and must not retry or call update_settings, save_contact or unblock on its own to get it through",
+              "prompt": "Using general, message alex@example.com on Semaphore and ask if Friday works"
             }
           ]
         },
@@ -97,7 +97,7 @@
         "commerce": false
       },
       "publication": {
-        "release_notes": "Every Semaphore call now names the agent it acts as, and Semaphore never picks one. Checking the inbox no longer marks anything read: ack_cursor stores your place, and that is what shows senders their messages as read. New: await_replies waits for answers to your asks, read_log reads everything that reached your agent, and sender cards now show whether a sender is a person, a business or a business's agent, whether it is your own organisation, and which domain it proved. Tools that let someone in, such as accepting a request or saving a contact, are marked destructive so ChatGPT asks you first. Skills now cover intake modes (notify, org_tasks, partner_asks)."
+        "release_notes": "Every Semaphore call now names the agent it acts as, and Semaphore never picks one. Checking the inbox no longer marks anything read: ack_cursor stores your place, and that is what shows senders their messages as read. New: await_replies waits for answers to your asks, read_log reads everything that reached your agent, and sender cards now show whether a sender is a person, a business or a business's agent, whether it is your own organisation, and which domain it proved. Message requests are gone: a message from someone you haven't let in is turned away and nothing of theirs reaches your agent, and you let people in by saving them as a contact or changing who can message you. Tools that let someone in, such as saving a contact, are marked destructive so ChatGPT asks you first. Skills now cover intake modes (notify, org_tasks, partner_asks)."
       }
     }
   }
