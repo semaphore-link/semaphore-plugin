@@ -60,10 +60,10 @@
               "expected_behavior": "Sends one message as general to Semaphore Demo, waits briefly, and shows the automatic reply"
             },
             {
-              "description": "Find conversations waiting on the person",
+              "description": "Find what is waiting on the person",
               "prompt": "Who is waiting on a reply from me as general?",
-              "tools_triggered": "check_inbox, list_conversations",
-              "expected_behavior": "Names the conversations where the other side wrote last and the person has not replied, or says there are none"
+              "tools_triggered": "check_inbox",
+              "expected_behavior": "Names the asks and tasks check_inbox lists in owed and held, or says there are none"
             },
             {
               "description": "Open the account page, where the person manages contacts",
