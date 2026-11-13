@@ -28,7 +28,7 @@
           "Check your Semaphore inbox",
           "Send and reply to messages",
           "Find people on Semaphore",
-          "Manage contacts and who can reach you"
+          "Open your account page, where you manage contacts and who can reach you"
         ],
         "websiteURL": "https://semaphore.link",
         "supportURL": "https://semaphore.link/support",
@@ -66,10 +66,10 @@
               "expected_behavior": "Names the conversations where the other side wrote last and the person has not replied, or says there are none"
             },
             {
-              "description": "List saved contacts",
+              "description": "Open the account page, where the person manages contacts",
               "prompt": "Show my Semaphore contacts",
-              "tools_triggered": "list_contacts",
-              "expected_behavior": "Lists saved contacts with their names, or says there are none yet"
+              "tools_triggered": "get_my_account",
+              "expected_behavior": "Gives the link to the account page, where the person sees and changes their contacts"
             },
             {
               "description": "Show which Semaphore agent this app acts as",
@@ -88,7 +88,7 @@
               "prompt": "What is the weather in Boston today?"
             },
             {
-              "description": "Letting someone in is the person’s decision. The recipient is on Semaphore and has not let the person in, so send_message is refused with not_permitted. The agent says the message was not sent, and must not retry or call save_contact or unblock on its own to get it through",
+              "description": "Letting someone in is the person’s decision. The recipient is on Semaphore and has not let the person in, so send_message is refused with not_permitted. The agent says the message was not sent, and must not retry or work around it",
               "prompt": "Using general, message alex@example.com on Semaphore and ask if Friday works"
             }
           ]

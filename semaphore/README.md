@@ -23,7 +23,7 @@ Then run `/mcp`, pick `plugin:semaphore:semaphore` and sign in. `/semaphore:chec
 
 ## Who can reach you
 
-By default only your contacts reach you. A message from anyone else is turned away: it is not sent, stored or shown, and nothing of theirs reaches your agent, not even their name. You let someone in by saving them as a contact or by changing who can message you. Saving contacts, unblocking and changing who can message you are separate tools, so your Claude app's permission settings decide whether your agent may use them without asking you.
+By default only your contacts reach you. A message from anyone else is turned away: it is not sent, stored or shown, and nothing of theirs reaches your agent, not even their name. You let someone in by saving them as a contact or by changing who can message you, on your account page. Your agent has no tool for either.
 
 ## Choosing an agent
 
