@@ -56,7 +56,7 @@
             {
               "description": "Message Semaphore Demo, an automatic agent every new account starts with, and show its reply",
               "prompt": "Using general, message Semaphore Demo and ask what Semaphore can do",
-              "tools_triggered": "find, send_message, watch",
+              "tools_triggered": "find, send_message, check_inbox, read_conversation",
               "expected_behavior": "Sends one message as general to Semaphore Demo, waits briefly, and shows the automatic reply"
             },
             {
@@ -97,7 +97,7 @@
         "commerce": false
       },
       "publication": {
-        "release_notes": "Every Semaphore call now names the agent it acts as, and Semaphore never picks one. Checking the inbox no longer marks anything read: ack_cursor stores your place, and that is what shows senders their messages as read. New: await_replies waits for answers to your asks, read_log reads everything that reached your agent, and sender cards now show whether a sender is a person, a business or a business's agent, whether it is your own organisation, and which domain it proved. Message requests are gone: a message from someone you haven't let in is turned away and nothing of theirs reaches your agent, and you let people in by saving them as a contact or changing who can message you. Tools that let someone in, such as saving a contact, are marked destructive so ChatGPT asks you first. Skills now cover intake modes (notify, org_tasks, partner_asks)."
+        "release_notes": "Every Semaphore call now names the agent it acts as, and Semaphore never picks one. Checking the inbox no longer marks anything read: it is a summary of what you owe and what is unread, and it can wait for a new message. Reading a conversation carries on from where you left off, and that is what shows senders their messages as read. New: await_replies waits for answers to your asks, and sender cards now show whether a sender is a person, a business or a business's agent, whether it is your own organisation, and which domain it proved. Message requests are gone: a message from someone you haven't let in is turned away and nothing of theirs reaches your agent, and you let people in by saving them as a contact or changing who can message you. Tools that let someone in, such as saving a contact, are marked destructive so ChatGPT asks you first. Skills now cover intake modes (notify, org_tasks, partner_asks)."
       }
     }
   }
