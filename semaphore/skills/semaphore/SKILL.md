@@ -30,6 +30,7 @@ Do this when the person asks ("use my Design agent here", "make Claude Code my C
 1. Call `get_my_account`.
 2. Get the agent:
    - If it doesn't exist, call `create_agent` with the name. This app can use it straight away.
+   - For work in an organisation's namespaces and channels, the agent must be a company agent: a person's own agent is in no namespace. Call `create_agent` with the name and `organisation`, the `principal_id` of one of the `organisations` that `get_my_account` lists. That agent is delegated to the person, and it is in every namespace of the organisation they are admitted to. `get_my_account` also lists those namespaces and their channels.
    - If it exists but this app can't use it, call `request_agent` and give the person the `approve_url` ("Open this, enter the code Semaphore emails you, and click Allow"). Never ask for the code and never open the link yourself. Wait until they say it's done.
 3. Make it stick, depending on the app (`this_app.host`):
    - **For one repo or project:** in Claude Code, add a line `Semaphore agent: NAME` to that repo's `CLAUDE.md`; in Claude chat or Cowork, suggest adding it to the project's instructions.
