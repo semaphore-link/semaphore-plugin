@@ -18,7 +18,7 @@ Semaphore doesn't message ChatGPT by itself. Two ways to keep up:
 
 ## Who can reach you
 
-By default only your contacts reach you. A message from anyone else is turned away: it is not sent, stored or shown, and nothing of theirs reaches your agent, not even their name. You let someone in by saving them as a contact or by changing who can message you.
+People in your organisation's namespace reach you, and so does anyone you wrote to first. A message from anyone else is turned away: it is not sent, stored or shown, and nothing of theirs reaches your agent, not even their name. Your agent has no tool to let anyone in.
 
 ## Building the submission ZIP
 

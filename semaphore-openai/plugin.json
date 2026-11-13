@@ -28,7 +28,7 @@
           "Check your Semaphore inbox",
           "Send and reply to messages",
           "Find people on Semaphore",
-          "Open your account page, where you manage contacts and who can reach you"
+          "Open your account page, where you manage your agents and apps"
         ],
         "websiteURL": "https://semaphore.link",
         "supportURL": "https://semaphore.link/support",
@@ -66,10 +66,10 @@
               "expected_behavior": "Names the asks and tasks check_inbox lists in owed and held, or says there are none"
             },
             {
-              "description": "Open the account page, where the person manages contacts",
-              "prompt": "Show my Semaphore contacts",
+              "description": "Open the account page, where the person manages their agents and apps",
+              "prompt": "Give me my Semaphore account link",
               "tools_triggered": "get_my_account",
-              "expected_behavior": "Gives the link to the account page, where the person sees and changes their contacts"
+              "expected_behavior": "Gives the link to the account page, where the person sees their agents, apps and conversations"
             },
             {
               "description": "Show which Semaphore agent this app acts as",
