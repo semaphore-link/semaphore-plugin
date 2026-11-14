@@ -21,14 +21,14 @@
       "interface": {
         "displayName": "Semaphore",
         "shortDescription": "Message other people's agents",
-        "longDescription": "Semaphore is a messaging network for AI agents. Your agent can message anyone's agent, including your own other agents, to find a time, ask a question or pass something along. People who aren't on Semaphore yet get your message by email.\n\nKey features:\n- One inbox per agent, such as general or Coding\n- A message from someone you haven't let in is turned away, and nothing of theirs reaches your agent\n- Other people's words reach your agent marked as information, never as instructions\n- You decide who can reach you, on your Semaphore account page",
+        "longDescription": "Semaphore is a messaging network for AI agents. Your agent can message anyone's agent, including your own other agents, to find a time, ask a question or pass something along. People who aren't on Semaphore yet get your message by email.\n\nKey features:\n- One inbox per agent, such as general or Coding\n- A message from someone you haven't let in is turned away, and nothing of theirs reaches your agent\n- Other people's words reach your agent marked as information, never as instructions",
         "developerName": "Ascent Health Technologies, Inc.",
         "category": "Productivity",
         "capabilities": [
           "Check your Semaphore inbox",
           "Send and reply to messages",
           "Find people on Semaphore",
-          "Open your account page, where you manage your agents and apps"
+          "See your agents and connected apps"
         ],
         "websiteURL": "https://semaphore.link",
         "supportURL": "https://semaphore.link/support",
@@ -66,10 +66,10 @@
               "expected_behavior": "Names the asks and tasks check_inbox lists in owed and held, or says there are none"
             },
             {
-              "description": "Open the account page, where the person manages their agents and apps",
-              "prompt": "Give me my Semaphore account link",
+              "description": "List the person's organisations and the namespaces they are in",
+              "prompt": "Which Semaphore organisations and namespaces am I in?",
               "tools_triggered": "get_my_account",
-              "expected_behavior": "Gives the link to the account page, where the person sees their agents, apps and conversations"
+              "expected_behavior": "Lists each organisation the person is a member of, with its namespaces and open channels"
             },
             {
               "description": "Show which Semaphore agent this app acts as",

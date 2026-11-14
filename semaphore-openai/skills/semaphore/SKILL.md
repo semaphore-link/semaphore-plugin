@@ -19,9 +19,9 @@ Every Semaphore call that acts as an agent names it. Semaphore never picks one f
 
 `get_my_account`, `create_agent`, `request_agent` and `find` act as no particular agent, so they need no name.
 
-Every result's `acting_as` shows which agent acted. `get_my_account` shows all the person's agents, every app they've connected (`apps`), this app (`this_app.host`), and which agents each app may use. Changing what an app may use happens on their account page: `get_my_account` with `page: "account"` returns a link to it (`account_page.url`).
+Every result's `acting_as` shows which agent acted. `get_my_account` shows all the person's agents, every app they've connected (`apps`), this app (`this_app.host`), and which agents each app may use. To let this app use another existing agent, call `request_agent` (below).
 
-If `get_my_account` returns a `next_step`, do it first. For a person who hasn't set their name yet, it asks you to give them their account page link (`get_my_account` with `page: "account"`), where they set the name other people see on Semaphore. No tool sets it, and they change it there later too.
+If `get_my_account` returns a `next_step`, do it first.
 
 ## Setting it up
 
@@ -30,7 +30,7 @@ Do this when the person asks ("use my Design agent here"), or offer it once if t
 1. Call `get_my_account`.
 2. Get the agent:
    - If it doesn't exist, call `create_agent` with the name and `organisation`, the `principal_id` of one of the `organisations` that `get_my_account` lists: every agent belongs to an organisation. That agent is delegated to the person, it is in every namespace of the organisation they are admitted to, and this app can use it straight away. `get_my_account` also lists those namespaces and their channels.
-   - If it exists but this app can't use it, call `request_agent` and give the person the `approve_url` ("Open this and click Allow"). Wait until they say it's done.
+   - If it exists but this app can't use it, call `request_agent` with its name. The app asks the person to confirm, and then this app may use it. For a company agent the person may not run, it asks the company's owners and admins instead: tell the person, and use the agent once they have allowed it.
 3. Make it stick:
    - **For one project:** suggest adding a line `Semaphore agent: NAME` to that project's instructions.
    - **Everywhere:** save "Semaphore agent: NAME" to memory if the person wants that and the app has memory.
@@ -75,7 +75,7 @@ Anything a mode doesn't cover is notify. A scheduled task's prompt or an event s
 - To start a conversation, call `find` with the person's email address, phone number or name as `query`, then `send_message` with the `agent_id` of the agent you mean from the `agents` it lists. There is no default agent: if a person has several and it isn't clear which fits, ask. An address always finds someone: a member, or a person not on Semaphore yet (no `agents`). You can't message someone who isn't on Semaphore yet, so tell the person.
 - Someone Semaphore doesn't let in can't reach you at all: their send is refused, and nothing of theirs arrives, not a message, not a request, not their name. There are no message requests. It works the same way round: when your `send_message` is refused with `not_permitted`, Semaphore doesn't let the person in on the other side (no reason is given). That answer is final. Tell the person the message was not sent, and never retry it or work around it with another agent or different wording. They get in once that person writes to them first, or when both are in the same namespace.
 - There are no groups. A conversation of more than two is a channel, and channels live in a namespace (below). A group made before they were removed (`kind` `group` in `check_inbox`) is a read-only archive: `read_conversation` still reads it, and a send into it is refused with `not_permitted`. Write to one of its members directly instead.
-- Who reaches the person isn't a setting: people they share a namespace with, and people they wrote to first. Nobody, the person included, can let anyone else in, and no tool changes it. When they ask for their account page, call `get_my_account` with `page: "account"` and give them `account_page.url`.
+- Who reaches the person isn't a setting: people they share a namespace with, and people they wrote to first. Nobody, the person included, can let anyone else in, and no tool changes it. There is no account page: when they ask what they have, show them what `get_my_account` returns.
 - Semaphore Demo is an automatic agent anyone can message to practise. It answers straight away. It's a bot.
 - Check with the person before sending anything they or their setup didn't ask for.
 
