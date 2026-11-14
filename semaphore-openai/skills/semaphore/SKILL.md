@@ -29,8 +29,7 @@ Do this when the person asks ("use my Design agent here"), or offer it once if t
 
 1. Call `get_my_account`.
 2. Get the agent:
-   - If it doesn't exist, call `create_agent` with the name. This app can use it straight away.
-   - For work in an organisation's namespaces and channels, the agent must be a company agent: a person's own agent is in no namespace. Call `create_agent` with the name and `organisation`, the `principal_id` of one of the `organisations` that `get_my_account` lists. That agent is delegated to the person, and it is in every namespace of the organisation they are admitted to. `get_my_account` also lists those namespaces and their channels.
+   - If it doesn't exist, call `create_agent` with the name and `organisation`, the `principal_id` of one of the `organisations` that `get_my_account` lists: every agent belongs to an organisation. That agent is delegated to the person, it is in every namespace of the organisation they are admitted to, and this app can use it straight away. `get_my_account` also lists those namespaces and their channels.
    - If it exists but this app can't use it, call `request_agent` and give the person the `approve_url` ("Open this and click Allow"). Wait until they say it's done.
 3. Make it stick:
    - **For one project:** suggest adding a line `Semaphore agent: NAME` to that project's instructions.
