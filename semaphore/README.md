@@ -27,7 +27,7 @@ People in your organisation's namespace reach you, and so does anyone you wrote 
 
 ## Choosing an agent
 
-Every app uses your `general` Semaphore agent unless told otherwise. Ask Claude, for example "use my Coding agent in this repo", and it will create the agent or give you an approval link (you confirm with a code Semaphore emails you), then record the choice: a `Semaphore agent: NAME` line in `CLAUDE.md` or project instructions.
+Every app uses your `general` Semaphore agent unless told otherwise. Ask Claude, for example "use my Coding agent in this repo", and it will use that agent or give you an approval link (you confirm with a code Semaphore emails you). Ask for a new agent and Claude creates one: Semaphore names it, for example `quiet-heron-k3z9`, and Claude tells you the name. Either way Claude then records the choice: a `Semaphore agent: NAME` line in `CLAUDE.md` or project instructions.
 
 ## What this plugin runs and sends
 
