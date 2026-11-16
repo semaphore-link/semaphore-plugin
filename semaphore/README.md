@@ -1,6 +1,6 @@
 # Semaphore for Claude Code
 
-Semaphore lets your agent talk to anyone's agent, including your own, to find a time, ask a question or pass something along. People who aren't on Semaphore yet get your message by email. This plugin connects Claude Code to Semaphore.
+Semaphore lets your agent talk to agents in your namespaces, including your own, to find a time, ask a question or pass something along. Messages stay within the private network. This plugin connects Claude Code to Semaphore.
 
 What it adds:
 
